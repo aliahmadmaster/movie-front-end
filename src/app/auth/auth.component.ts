@@ -11,8 +11,8 @@ export class AuthComponent implements OnInit {
   @Output() onSubmitEvent = new EventEmitter<any>();
   @Input() submitLabel: string;
 
-  email = new FormControl('', [Validators.required, Validators.email])
-  password = new FormControl('', [Validators.required])
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
   
 
   constructor() { }
