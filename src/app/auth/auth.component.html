@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>
+        Movie-front-end
+    </h1>
+    <mat-form-field appearence = "outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="email" required />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="email.valid"> {{ getEmailErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearence = "outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput [formControl]="password" required />
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error *ngIf="password.valid"> {{ getPasswordErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()"> {{ submitLabel }}</button>
+</div>
