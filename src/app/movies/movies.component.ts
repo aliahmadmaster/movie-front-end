@@ -13,11 +13,13 @@ export class MoviesComponent implements OnInit {
 
   comment = new FormControl('',);
 
-  listMovies: Observable<MovieModel[]>;
+  listMovies: MovieModel[];
   constructor(private movieService:MovieService) { }
-
+  
   async ngOnInit(): Promise<void> {
-    this.listMovies = await this.movieService.listMovies();
+    this.movieService.listMovies().subscribe((result:MovieModel[])=>{
+      this.listMovies = result
+      console.log("Result",this.listMovies);
+    });
   }
-
 }
